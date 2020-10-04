@@ -1,0 +1,39 @@
+$whiteColor: #ffffff;
+$blackColor: #000000;
+@font-face {
+    font-family: 'fontBold';
+    src: url(../fonts/gothamhtf-bold-webfont.ttf)
+}
+@font-face {
+    font-family: 'fontBook';
+    src: url(../fonts/gothamhtf-book-webfont.ttf);
+}
+%center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+%flexRow {
+    display: flex;
+    flex-direction: row;
+}
+%flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+$listItems: ("1": "../Images/bottom_1.png", 
+        "2": "../Images/bottom_2.png", 
+        "3": "../Images/bottom_3.png",
+        "4": "../Images/bottom_4.png",
+        "5": "../Images/bottom_5.png"
+        );
+
+%separation {
+    border-right: 1px solid $blackColor;
+    padding: 0 10px;
+}
+
+%textShadow{
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}

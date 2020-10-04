@@ -1,0 +1,199 @@
+@import "variables";
+.container{
+    width: 76%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+.top {
+    background-image: url('../Images/Top.png');
+    background-repeat: no-repeat;
+    background-size: auto;
+    height: 91vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-size: cover;
+    ul {
+        list-style: none;
+        justify-content: flex-start;
+        left: 15%;
+        position: absolute;
+        font: {
+            family: fontBook;
+            size: 18px;
+            weight: bold;
+        }
+        li {
+            position: relative;
+            left: 0;
+            transition: left linear 0.1s;
+            margin: 30px 0;
+            cursor: pointer;
+            &:hover {
+                @extend %textShadow;
+                left: 6px;
+            }
+        }
+    }
+    .happyPoints {
+        margin: auto;
+        cursor: pointer;
+        font: {
+            family: fontBold;
+            size: 50px;
+        }
+        &:hover {
+            @extend %textShadow;
+        }
+    }
+}
+.main_top {
+    @extend %flexRow;
+    div {
+        background-repeat: no-repeat;
+        @extend %center;
+        width: 50%;
+        height: 77vh;
+        float: left;
+        color: $whiteColor;
+        font-family: fontBold;
+        background-size: cover;
+    }
+    .main_Left {
+        font-size: 35px;
+        background-image: url('../Images/mainLeft.png');
+    }
+    .main_Right {
+        background-image: url('../Images/mainRight.png');
+        p { 
+            text-align: center;
+            font-size: 2vw;
+        }
+    }
+}
+.main_bottom {
+    @extend %center;
+    @extend %flexCol;
+    font-family: fontBook;
+    .main_bottom-products {
+        @extend %flexRow;
+        width: 100%;
+    }
+    @each $name, $value in $listItems {
+        .item_#{$name}{
+            background-image: url($value);
+            background-repeat: no-repeat;
+            height: 31vh;
+            width: 100%;
+            background-size: cover;
+            position: relative;
+            bottom: 0;
+            transition: bottom linear 0.1s;
+            &:hover {
+                bottom: 10px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+        }
+
+    }
+}
+.footer{
+    @extend %flexCol;
+    .footer_top {
+        @extend %flexRow;
+        .form {
+            width: 50%;
+            @extend %flexCol;
+            @extend %center;
+            .form_content{
+                width: 70%;
+                p {
+                    font-family: fontBook;
+                    font-weight: bold;
+                }
+                input {
+                    width: 85%;
+                    border: 1px solid $blackColor;
+                    line-height: 2.15;
+                }
+                button{
+                    color: $whiteColor;
+                    background-color: $blackColor;
+                    border: none;
+                    line-height: 2.20;
+                    margin-left: 5px;
+                    cursor: pointer;
+                    &:hover {
+                        color: $blackColor;
+                        font-weight: bold;
+                        background-color: greenyellow;
+                        box-shadow: 2px 2px 4px 4px greenyellow;
+                    }
+                }
+                .social {
+                    margin-top: 10px;
+                    i {
+                        color: #000;
+                        font-size: 25px;
+                        margin: 0 5px;
+                        &:hover {
+                            @extend %textShadow;
+                        }
+                    }
+                }
+            }
+        }
+        .moreInfo{
+            display: flex;
+            justify-content: flex-end;
+            width: 43%;
+            ul {
+                list-style: none;
+                font-family: fontBook;    
+                li {
+                    position: relative;
+                    left: 0;
+                    transition: left linear 0.1s;
+                    &:nth-child(1){
+                        font: {
+                            weight: bold;
+                            size: 18px;
+                        }
+                    }
+                    font-size: 14px;            
+                    margin: 15px 0;
+                    cursor: pointer;
+                    &:hover {
+                        left: 8px;
+                        @extend %textShadow;
+                    }
+                }
+            }
+        }
+    }
+    .footer_bottom{
+        @extend %center;
+        ul{
+            list-style: none;
+            display: flex;
+            flex-direction: row;
+            li {
+                @for $i from 1 through 4 {
+                    &:nth-child(#{$i}){
+                        @extend %separation;
+                    }
+                }
+                &:last-child{
+                    padding: 0 10px;
+                }
+                font-family: fontBook;
+                cursor: pointer;
+                text-align: center;
+                &:hover {
+                    @extend %textShadow;
+                }
+            }
+        }
+    }
+}
